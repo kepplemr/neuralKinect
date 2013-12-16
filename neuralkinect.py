@@ -8,7 +8,7 @@
     @note ->           Utilizes SciPy && PyBrain libraries:
                        http://www.scipy.org/install.html
                        https://github.com/pybrain/pybrain
-    @python_version -> Anaconda (2.7)
+    @python_version -> Anaconda 32-bit (2.7)
     @usage ->          python neuralkinect.py
 '''
 import csv

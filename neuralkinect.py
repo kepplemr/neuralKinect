@@ -48,6 +48,9 @@ class NeuralKinect():
                         self.dataSet.addSample(points, target)
                         points = []
                     rows += 1
+                    
+    def testNetwork(self):
+        pass
 
 def main():
     nk = NeuralKinect()

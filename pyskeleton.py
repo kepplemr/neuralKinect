@@ -77,9 +77,9 @@ def draw_skeleton_data(pSkelton, index, positions, width = 4):
 if hasattr(ctypes.pythonapi, 'Py_InitModule4'):
    Py_ssize_t = ctypes.c_int
 elif hasattr(ctypes.pythonapi, 'Py_InitModule4_64'):
-   Py_ssize_t = ctypes.c_int64
+    Py_ssize_t = ctypes.c_int64
 else:
-   raise TypeError("Cannot determine type of Py_ssize_t")
+    raise TypeError("Cannot determine type of Py_ssize_t")
 
 _PyObject_AsWriteBuffer = ctypes.pythonapi.PyObject_AsWriteBuffer
 _PyObject_AsWriteBuffer.restype = ctypes.c_int
@@ -88,14 +88,14 @@ _PyObject_AsWriteBuffer.argtypes = [ctypes.py_object,
                                   ctypes.POINTER(Py_ssize_t)]
 
 def surface_to_array(surface):
-   buffer_interface = surface.get_buffer()
-   address = ctypes.c_void_p()
-   size = Py_ssize_t()
-   _PyObject_AsWriteBuffer(buffer_interface,
+    buffer_interface = surface.get_buffer()
+    address = ctypes.c_void_p()
+    size = Py_ssize_t()
+    _PyObject_AsWriteBuffer(buffer_interface,
                           ctypes.byref(address), ctypes.byref(size))
-   bytes = (ctypes.c_byte * size.value).from_address(address.value)
-   bytes.object = buffer_interface
-   return bytes
+    bytes = (ctypes.c_byte * size.value).from_address(address.value)
+    bytes.object = buffer_interface
+    return bytes
 
 def draw_skeletons(skeletons):
     for index, data in enumerate(skeletons):
@@ -140,14 +140,11 @@ if __name__ == '__main__':
     full_screen = True
     draw_skeleton = True
     video_display = False
-
     screen_lock = thread.allocate()
-
     screen = pygame.display.set_mode(DEPTH_WINSIZE,0,16)    
     pygame.display.set_caption('Python Kinect Demo')
     skeletons = None
     screen.fill(THECOLORS["black"])
-
     kinect = nui.Runtime()
     kinect.skeleton_engine.enabled = True
     def post_frame(frame):

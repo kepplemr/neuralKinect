@@ -1,0 +1,25 @@
+buildNetwork(60, 60, 5) -> 6000 Epochs
+###
+Training time -> 880.2109999656677
+0.0072027800011392716
+Network result -> A
+Network result -> A
+Network result -> A
+Network result -> A
+Network result -> A
+Network result -> B
+Network result -> B
+Network result -> B
+Network result -> B
+Network result -> B
+Network result -> L
+Network result -> L
+Network result -> L
+Network result -> L
+Network result -> L
+Network result -> X
+Network result -> X
+Network result -> X
+Network result -> X
+Network result -> X
+###
